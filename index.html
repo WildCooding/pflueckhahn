@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pflückhahn Fussbodenbau - Böden auf die Sie stehen</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons von Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Eigener Stil für die Inter-Schriftart */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Aktiver Navigationslink */
+        .nav-link.active {
+            color: #F97316; /* Orange-500 */
+            font-weight: 700;
+        }
+        /* Animation für das Einblenden von Sektionen */
+        .page-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .page-section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div id="app" class="min-h-screen flex flex-col">
+
+        <!-- Header & Navigation -->
+        <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <!-- Logo -->
+                    <a href="#" class="flex items-center space-x-2" onclick="showPage('home')">
+                        <img src="https://github.com/WildCooding/test2/blob/main/logo-pflueckhahn5neu_d.jpg?raw=true" alt="Pflückhahn Fussbodenbau Logo" class="h-16 w-auto">
+                    </a>
+
+                    <!-- Desktop Navigation -->
+                    <nav class="hidden lg:flex items-center space-x-8">
+                        <a href="#" class="nav-link text-gray-600 hover:text-orange-500 transition-colors duration-300" onclick="showPage('home', this)">Startseite</a>
+                        <a href="#" class="nav-link text-gray-600 hover:text-orange-500 transition-colors duration-300" onclick="showPage('about', this)">Über uns</a>
+                        <a href="#" class="nav-link text-gray-600 hover:text-orange-500 transition-colors duration-300" onclick="showPage('nature', this)">Natur Pur</a>
+                        <a href="#" class="nav-link text-gray-600 hover:text-orange-500 transition-colors duration-300" onclick="showPage('references', this)">Referenzen</a>
+                        <a href="#" class="nav-link text-gray-600 hover:text-orange-500 transition-colors duration-300" onclick="showPage('contact', this)">Kontakt</a>
+                    </nav>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="lg:hidden">
+                        <button id="mobile-menu-button" class="text-gray-700 hover:text-orange-500 focus:outline-none">
+                            <i data-lucide="menu" class="h-6 w-6"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-200">
+                <nav class="flex flex-col p-4 space-y-2">
+                    <a href="#" class="nav-link-mobile block py-2 px-4 text-gray-600 rounded-md hover:bg-orange-50 hover:text-orange-600" onclick="showPage('home', this)">Startseite</a>
+                    <a href="#" class="nav-link-mobile block py-2 px-4 text-gray-600 rounded-md hover:bg-orange-50 hover:text-orange-600" onclick="showPage('about', this)">Über uns</a>
+                    <a href="#" class="nav-link-mobile block py-2 px-4 text-gray-600 rounded-md hover:bg-orange-50 hover:text-orange-600" onclick="showPage('nature', this)">Natur Pur</a>
+                    <a href="#" class="nav-link-mobile block py-2 px-4 text-gray-600 rounded-md hover:bg-orange-50 hover:text-orange-600" onclick="showPage('references', this)">Referenzen</a>
+                    <a href="#" class="nav-link-mobile block py-2 px-4 text-gray-600 rounded-md hover:bg-orange-50 hover:text-orange-600" onclick="showPage('contact', this)">Kontakt</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-grow">
+            
+            <!-- Startseite -->
+            <section id="home" class="page-section">
+                <div class="relative bg-gray-900">
+                    <div class="absolute inset-0">
+                        <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=2127&auto=format&fit=crop" alt="Moderner Wohnraum mit Holzboden">
+                        <div class="absolute inset-0 bg-gray-900/60"></div>
+                    </div>
+                    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-48 text-center text-white">
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+                            <span class="block">Böden auf die Sie stehen...</span>
+                        </h1>
+                        <p class="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-gray-300">
+                            Herzlich Willkommen bei Pflückhahn Fussbodenbau, Ihrem zuverlässigen Ansprechpartner, wenn es um Estrich und Bodenbelag geht.
+                        </p>
+                        <div class="mt-10">
+                            <a href="#" onclick="showPage('contact')" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                                Jetzt anfragen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                         <div class="text-center">
+                            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Ihr Experte für Fussböden</h2>
+                            <p class="mt-4 text-lg text-gray-600">Ob Neubau oder Altbau, wir sind gerne für Sie da. Möchten Sie sich individuell von uns beraten lassen oder ein Angebot einholen? Nehmen Sie Kontakt mit uns auf.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Services Section on Homepage -->
+                <div class="py-16 sm:py-24 bg-gray-50">
+                    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-12">
+                            <h2 class="text-base font-semibold leading-7 text-orange-600">Unsere Leistungen</h2>
+                            <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Alles aus einer Hand</p>
+                            <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Vom Designboden bis zum Parkett, von der Estrichsanierung bis zum edlen Textilboden – wir sind der richtige Partner.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <!-- Service Item 1 -->
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <i data-lucide="layers" class="h-10 w-10 text-orange-500 mb-4"></i>
+                                <h3 class="text-lg font-bold mb-2">Bodenbeläge</h3>
+                                <p class="text-gray-600">Unsere leistungsfähigen Montageteams verlegen Textilbeläge, Gummibeläge, Linoleumbeläge, Kunststoffbeläge, Parkett, Vinyl-Designbeläge und ableitfähige Beläge inkl. vorbereitende Arbeiten und Montage von Profilen.</p>
+                            </div>
+                            <!-- Service Item 2 -->
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <i data-lucide="hammer" class="h-10 w-10 text-orange-500 mb-4"></i>
+                                <h3 class="text-lg font-bold mb-2">Estrich & Sanierung</h3>
+                                <p class="text-gray-600">Wir verarbeiten pumpfähige, schnelltrocknende Spachtelmassen, führen Verfugungen aus und nehmen Estrichsanierungen vor. In Kooperation mit der Firma Stefan Steeb GmbH & Co. KG erstellen wir neue Zementestriche inkl. Dämmung.</p>
+                            </div>
+                            <!-- Service Item 3 -->
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <i data-lucide="check-circle" class="h-10 w-10 text-orange-500 mb-4"></i>
+                                <h3 class="text-lg font-bold mb-2">Qualität & Technik</h3>
+                                <p class="text-gray-600">Alle Aufträge werden nach den neuesten Regeln des Fachs und der Technik, fachmännisch und termingerecht abgeschlossen. Dabei kommt hochwertiges Know-how und moderne Technik zur Anwendung.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Über uns -->
+            <section id="about" class="page-section py-16 sm:py-24 bg-white">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 class="text-base font-semibold leading-7 text-orange-600">Über uns</h2>
+                            <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Handwerk mit Erfahrung</p>
+                            <p class="mt-6 text-lg leading-8 text-gray-600">
+                                Unsere Firma ist ein noch sehr junges Unternehmen, welches 2016 von Herrn Andre Pflückhahn gegründet wurde.
+                                Wir können auf 25 Jahre Berufserfahrung im Objekt und Home Bereich zurückblicken.
+                            </p>
+                            <p class="mt-4 text-lg leading-8 text-gray-600">
+                                Ob Krankenhäuser, Schulen, Banken, Einkaufszentren, Fitnessstudios, Industriehallen, Messen oder das heimische Wohnzimmer: Überall haben wir wertvolle Erfahrungen sammeln können, die wir in Ihr Projekt einbringen.
+                            </p>
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-xl">
+                            <img src="https://placehold.co/600x500/E5E7EB/333333?text=Unser+Team" alt="Bild des Teams oder Gründers" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Separate Leistungen Section (now hidden by default) -->
+            <section id="services" class="page-section py-16 sm:py-24 bg-gray-50">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-base font-semibold leading-7 text-orange-600">Unsere Leistungen</h2>
+                        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Alles aus einer Hand</p>
+                        <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Vom Designboden bis zum Parkett, von der Estrichsanierung bis zum edlen Textilboden – wir sind der richtige Partner.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Service Item 1 -->
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <i data-lucide="layers" class="h-10 w-10 text-orange-500 mb-4"></i>
+                            <h3 class="text-lg font-bold mb-2">Bodenbeläge</h3>
+                            <p class="text-gray-600">Unsere leistungsfähigen Montageteams verlegen Textilbeläge, Gummibeläge, Linoleumbeläge, Kunststoffbeläge, Parkett, Vinyl-Designbeläge und ableitfähige Beläge inkl. vorbereitende Arbeiten und Montage von Profilen.</p>
+                        </div>
+                        <!-- Service Item 2 -->
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <i data-lucide="hammer" class="h-10 w-10 text-orange-500 mb-4"></i>
+                            <h3 class="text-lg font-bold mb-2">Estrich & Sanierung</h3>
+                            <p class="text-gray-600">Wir verarbeiten pumpfähige, schnelltrocknende Spachtelmassen, führen Verfugungen aus und nehmen Estrichsanierungen vor. In Kooperation mit der Firma Stefan Steeb GmbH & Co. KG erstellen wir neue Zementestriche inkl. Dämmung.</p>
+                        </div>
+                        <!-- Service Item 3 -->
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <i data-lucide="check-circle" class="h-10 w-10 text-orange-500 mb-4"></i>
+                            <h3 class="text-lg font-bold mb-2">Qualität & Technik</h3>
+                            <p class="text-gray-600">Alle Aufträge werden nach den neuesten Regeln des Fachs und der Technik, fachmännisch und termingerecht abgeschlossen. Dabei kommt hochwertiges Know-how und moderne Technik zur Anwendung.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Natur Pur -->
+            <section id="nature" class="page-section py-16 sm:py-24 bg-white">
+                 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="rounded-2xl overflow-hidden shadow-xl">
+                            <img src="https://placehold.co/600x500/E5E7EB/333333?text=Natur-Materialien" alt="Nahaufnahme eines Holzbodens" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h2 class="text-base font-semibold leading-7 text-orange-600">Nachhaltigkeit</h2>
+                            <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Natur Pur</p>
+                            <p class="mt-6 text-lg leading-8 text-gray-600">
+                               Immer mehr rückt das Thema Nachhaltigkeit in den Mittelpunkt unseres Lebens. In unserem Sortiment finden Sie auch Produkte aus natürlichen Materialien.
+                            </p>
+                            <p class="mt-4 text-lg leading-8 text-gray-600">
+                                Zu diesen gehören beispielsweise hochwertige Sisalteppiche, Wollteppiche oder auch Linoleum. Genauso wie edle Hölzer in Parkett oder Dielen-Form. Haben auch Sie Interesse? Rufen Sie uns an.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Referenzen -->
+            <section id="references" class="page-section py-16 sm:py-24 bg-gray-50">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-base font-semibold leading-7 text-orange-600">Vorher / Nachher</h2>
+                        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Unsere Arbeit im Detail</p>
+                        <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Sehen Sie selbst, welchen Unterschied ein neuer Boden machen kann.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Projekt 1 -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 text-center">Wohnzimmer Renovierung</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-center">
+                                    <img src="https://placehold.co/400x300/FEE2E2/991B1B?text=Vorher" alt="Vorher-Bild Projekt 1" class="rounded-lg shadow-md mb-2 aspect-[4/3] object-cover">
+                                    <span class="font-semibold">Vorher</span>
+                                </div>
+                                <div class="text-center">
+                                    <img src="https://placehold.co/400x300/D1FAE5/065F46?text=Nachher" alt="Nachher-Bild Projekt 1" class="rounded-lg shadow-md mb-2 aspect-[4/3] object-cover">
+                                    <span class="font-semibold">Nachher</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Projekt 2 -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-4 text-center">Bürofläche Neugestaltung</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="text-center">
+                                    <img src="https://placehold.co/400x300/FEF3C7/92400E?text=Vorher" alt="Vorher-Bild Projekt 2" class="rounded-lg shadow-md mb-2 aspect-[4/3] object-cover">
+                                    <span class="font-semibold">Vorher</span>
+                                </div>
+                                <div class="text-center">
+                                    <img src="https://placehold.co/400x300/DBEAFE/1E40AF?text=Nachher" alt="Nachher-Bild Projekt 2" class="rounded-lg shadow-md mb-2 aspect-[4/3] object-cover">
+                                    <span class="font-semibold">Nachher</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kontakt -->
+            <section id="contact" class="page-section py-16 sm:py-24 bg-white">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-12">
+                        <h2 class="text-base font-semibold leading-7 text-orange-600">Kontakt</h2>
+                        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Nehmen Sie Kontakt auf</p>
+                        <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Wir freuen uns auf Ihre Nachricht und beraten Sie gerne unverbindlich.</p>
+                    </div>
+                    <div class="max-w-xl mx-auto">
+                        <form action="#" method="POST" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Name</label>
+                                <div class="mt-2">
+                                    <input type="text" name="name" id="name" autocomplete="name" class="block w-full rounded-md border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">E-Mail</label>
+                                <div class="mt-2">
+                                    <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                             <div>
+                                <label for="phone" class="block text-sm font-medium leading-6 text-gray-900">Telefon</label>
+                                <div class="mt-2">
+                                    <input type="tel" name="phone" id="phone" autocomplete="tel" class="block w-full rounded-md border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium leading-6 text-gray-900">Nachricht</label>
+                                <div class="mt-2">
+                                    <textarea name="message" id="message" rows="4" class="block w-full rounded-md border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-orange-500 sm:text-sm sm:leading-6"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">
+                                    Nachricht senden
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Impressum -->
+            <section id="imprint" class="page-section py-16 sm:py-24 bg-gray-50">
+                <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+                    <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">Impressum</h2>
+                    <div class="space-y-4 text-gray-600 leading-7">
+                        <p class="font-semibold text-gray-900">Angaben gemäß § 5 TMG:</p>
+                        <p>
+                            Pflückhahn Fussbodenbau<br>
+                            Rainweg 7<br>
+                            72280 Dornstetten
+                        </p>
+                        <p>
+                            <strong>Vertreten durch:</strong><br>
+                            Andre Pflückhahn
+                        </p>
+                        <p>
+                            <strong>Kontakt:</strong><br>
+                            Telefon: 07443-9680881<br>
+                            E-Mail: A-Pflueckhahn@web.de
+                        </p>
+                        <p>
+                            <strong>Steuernummer:</strong><br>
+                            42359/58526
+                        </p>
+
+                        <h3 class="text-xl font-bold text-gray-900 pt-6">Haftungsausschluss (Disclaimer)</h3>
+                        <h4 class="text-lg font-semibold text-gray-800 pt-2">Haftung für Inhalte</h4>
+                        <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+                        
+                        <h4 class="text-lg font-semibold text-gray-800 pt-2">Haftung für Links</h4>
+                        <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+                        
+                        <h4 class="text-lg font-semibold text-gray-800 pt-2">Urheberrecht</h4>
+                        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Über uns -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Pflückhahn Fussbodenbau</h3>
+                        <p class="text-gray-400">Ihr Experte für hochwertige Bodenlösungen in Dornstetten und Umgebung. Qualität und Erfahrung seit 2016.</p>
+                    </div>
+                    <!-- Quick Links -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Navigation</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white" onclick="showPage('home')">Startseite</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white" onclick="showPage('about')">Über uns</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white" onclick="showPage('references')">Referenzen</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white" onclick="showPage('contact')">Kontakt</a></li>
+                        </ul>
+                    </div>
+                    <!-- Kontakt -->
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
+                        <ul class="space-y-2 text-gray-400">
+                            <li class="flex items-start"><i data-lucide="map-pin" class="h-5 w-5 mr-3 mt-1 flex-shrink-0"></i><span>Rainweg 7<br>72280 Dornstetten</span></li>
+                            <li class="flex items-center"><i data-lucide="phone" class="h-5 w-5 mr-3 flex-shrink-0"></i><a href="tel:074439680881" class="hover:text-white">07443-9680881</a></li>
+                            <li class="flex items-center"><i data-lucide="mail" class="h-5 w-5 mr-3 flex-shrink-0"></i><a href="mailto:A-Pflueckhahn@web.de" class="hover:text-white">A-Pflueckhahn@web.de</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
+                    <p>&copy; <span id="current-year"></span> Pflückhahn Fussbodenbau. Alle Rechte vorbehalten. | <a href="#" class="hover:text-white" onclick="showPage('imprint')">Impressum</a></p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // --- JavaScript für die Seiten-Navigation und Interaktivität ---
+
+        // Funktion zum Anzeigen der ausgewählten Seite/Sektion
+        function showPage(pageId, navElement) {
+            // Alle Sektionen ausblenden
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Die ausgewählte Sektion einblenden
+            const activePage = document.getElementById(pageId);
+            if (activePage) {
+                activePage.classList.add('active');
+            }
+
+            // Aktiven Status im Desktop-Menü aktualisieren
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            if (navElement && !navElement.classList.contains('nav-link-mobile')) {
+                navElement.classList.add('active');
+            } else {
+                // Finde den entsprechenden Desktop-Link für den mobilen Klick
+                const desktopLinks = document.querySelectorAll('.nav-link');
+                const linkMap = ['home', 'about', 'nature', 'references', 'contact'];
+                const index = linkMap.indexOf(pageId);
+                if (index !== -1 && desktopLinks[index]) {
+                    desktopLinks[index].classList.add('active');
+                }
+            }
+            
+            // Mobiles Menü schließen
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.add('hidden');
+
+            // Nach oben scrollen
+            window.scrollTo(0, 0);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initial die Startseite anzeigen
+            showPage('home', document.querySelector('.nav-link'));
+
+            // Event Listener für den Mobile-Menü-Button
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Lucide Icons initialisieren
+            lucide.createIcons();
+            
+            // Aktuelles Jahr im Footer setzen
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
